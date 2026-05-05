@@ -3,13 +3,17 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
+  build: {
+    outDir: 'dist'
+  },
   test: {
     environment: 'jsdom',
     globals: true,
     setupFiles: './src/setupTests.js',
     coverage: {
+      provider: 'v8',
       reporter: ['text', 'html'],
-      exclude: ['node_modules/', 'src/setupTests.js']
+      exclude: ['node_modules/', 'src/setupTests.js', 'vite.config.js']
     }
   }
 })
