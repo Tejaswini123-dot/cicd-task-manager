@@ -10,10 +10,6 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: './src/setupTests.js',
-    coverage: {
-      provider: 'v8',
-      reporter: ['text', 'html'],
-      exclude: ['node_modules/', 'src/setupTests.js', 'vite.config.js']
-    }
+    include: ['src/**/*.test.jsx', 'src/**/*.test.js']
   }
 })
